@@ -1,0 +1,41 @@
+
+➜  ~ mkdir cursor-test // creating the project-folder
+
+➜  ~ cd cursor-test // entering the project folder
+
+➜  cursor-test git clone https://github.com/bogdjavor/cursor-test.git  // cloning the remote repository from github 
+
+➜  cursor-test git:(master) git init // initializing the project                                          
+
+➜  cursor-test git:(master) subl sample.txt // subl(subime text) creating a simple txt file
+
+➜  cursor-test git:(master) ✗ git add sample.txt // adding the file in the staging area
+
+➜  cursor-test git:(master) ✗ git commit // commiting the file to the local repository
+
+➜  cursor-test git:(master) git status // checking the status
+
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+➜  cursor-test git:(master) git branch --unset-upstream // fixing the problem
+
+➜  cursor-test git:(master) git checkout -b edit-branch // creating and entering the new branch
+
+➜  cursor-test git:(edit-branch) subl sample.txt // opening the text file 
+
+➜  cursor-test git:(edit-branch) ✗ git add sample.txt // adding the edited file in the staging area
+➜  
+➜  
+➜  cursor-test git:(edit-branch) ✗ git checkout master // exiting the new branch and entering the master branch
+
+➜  cursor-test git:(master) ✗ git commit -am "This is a second commit after editing in a different branch." // commiting the cranges to the local repository with description
+
+➜  cursor-test git:(master) subl sample.txt // checking for the spelling mistakes
+➜  
+➜  cursor-test git:(master) ✗ git commit -am "Fixing the spelling mistakes"  // commiting again
+
+➜  cursor-test git:(master) git status // checking the status of the local repository
+
+➜  cursor-test git:(master) git push origin master // syncing the local repository to the remote repository
