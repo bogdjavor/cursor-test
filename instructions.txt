@@ -22,19 +22,14 @@ Your branch is based on 'origin/master', but the upstream is gone.
 
 ➜  cursor-test git:(master) git checkout -b edit-branch // creating and entering the new branch
 
-➜  cursor-test git:(edit-branch) subl sample.txt // opening the text file 
+➜  cursor-test git:(edit-branch) subl instructions.txt // creating a new text document in the new branch
 
-➜  cursor-test git:(edit-branch) ✗ git add sample.txt // adding the edited file in the staging area
-➜  
-➜  
-➜  cursor-test git:(edit-branch) ✗ git checkout master // exiting the new branch and entering the master branch
+➜  cursor-test git:(edit-branch) ✗ git add . // adding document to the Staging area
 
-➜  cursor-test git:(master) ✗ git commit -am "This is a second commit after editing in a different branch." // commiting the cranges to the local repository with description
+➜  cursor-test git:(edit-branch) ✗ git commit -am "Adding instructions" // commiting changes to the local repository
 
-➜  cursor-test git:(master) subl sample.txt // checking for the spelling mistakes
-➜  
-➜  cursor-test git:(master) ✗ git commit -am "Fixing the spelling mistakes"  // commiting again
+➜  cursor-test git:(edit-branch) git push origin edit-branch // syncing the new branch with the remote repository
 
-➜  cursor-test git:(master) git status // checking the status of the local repository
+➜  cursor-test git:(edit-branch) git checkout master // entering the master branch
 
-➜  cursor-test git:(master) git push origin master // syncing the local repository to the remote repository
+➜  cursor-test git:(master) git merge edit-branch // merging the master branch and the new branch
